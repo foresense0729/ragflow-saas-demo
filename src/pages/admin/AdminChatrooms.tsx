@@ -37,13 +37,15 @@ export default function AdminChatrooms() {
 
   async function save() {
     if (editId) {
-      await api.post("/admin/chatrooms/update", {
+      await api.post("/admin/chatrooms", {
+        action: "update",
         id: editId,
         room_code: roomCode,
         ragflow_url: url,
       });
     } else {
-      await api.post("/admin/chatrooms/create", {
+      await api.post("/admin/chatrooms", {
+        action: "create",
         room_code: roomCode,
         ragflow_url: url,
       });
@@ -55,7 +57,7 @@ export default function AdminChatrooms() {
   async function remove(id: number) {
     if (!confirm("確定要刪除？")) return;
 
-    await api.post("/admin/chatrooms/delete", { id });
+    await api.post("/admin/chatrooms", { action: "delete", id });
     load();
   }
 

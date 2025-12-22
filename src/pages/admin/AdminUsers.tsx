@@ -23,7 +23,8 @@ export default function AdminUsers() {
   }
 
   async function createUser() {
-    await api.post("/admin/users/create", {
+    await api.post("/admin/users", {
+      action: "create",
       email,
       password: pw,
       role,
