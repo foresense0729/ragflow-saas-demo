@@ -42,6 +42,7 @@ export async function POST(req: Request) {
       daysRemaining: trialStatus.daysRemaining,
     });
   } catch (err) {
+    console.error("Login Error:", err);
     return error("登入失敗");
   }
 }

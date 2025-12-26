@@ -2,7 +2,8 @@
   "name": "ragflow-saas-demo",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
+    "frontend": "vite",
+    "dev": "echo 'Backend API Mode'",
     "build": "vite build",
     "vercel-build": "vite build"
   },
